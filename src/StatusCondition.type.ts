@@ -1,0 +1,1 @@
+export type StatusCondition = "INITIAL" | "PENDING" | "SUCCESS" | "ERROR";

@@ -1,0 +1,75 @@
+{
+    "name": "react-smart-promise",
+    "version": "0.0.1",
+    "author": "Eric Mantooth",
+    "description": "Easily handle promises in your React components.",
+    "keywords": [
+        "react",
+        "promise",
+        "data",
+        "fetch",
+        "ajax",
+        "loader"
+    ],
+    "license": "MIT",
+    "scripts": {
+        "prebuild": "npm-run-all lint",
+        "build": "npm-run-all build:pika",
+        "build:pika": "pika build",
+        "lint": "eslint src --ext=ts,tsx",
+        "test": "echo \"No tests defined\" && exit 0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/erictooth/react-smart-promise"
+    },
+    "bugs": {
+        "url": "https://github.com/erictooth/react-smart-promise/issues"
+    },
+    "homepage": "https://github.com/erictooth/react-smart-promise",
+    "dependencies": {},
+    "peerDependencies": {
+        "react": "^16.8.0"
+    },
+    "optionalDependencies": {
+        "@types/react": "^16.8.0"
+    },
+    "devDependencies": {
+        "@erictooth/eslint-config": "^1.1.4",
+        "@erictooth/prettier-config": "^2.0.0",
+        "@pika/pack": "^0.5.0",
+        "@pika/plugin-build-node": "^0.6.1",
+        "@pika/plugin-build-web": "^0.6.1",
+        "@pika/plugin-ts-standard-pkg": "^0.6.1",
+        "eslint": "^6.5.1",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^1.18.2",
+        "react": "^16.10.2",
+        "react-dom": "^16.10.2",
+        "typescript": "^3.6.4"
+    },
+    "prettier": "@erictooth/prettier-config",
+    "eslintConfig": {
+        "extends": [
+            "@erictooth/eslint-config",
+            "@erictooth/eslint-config/react",
+            "@erictooth/eslint-config/typescript"
+        ]
+    },
+    "eslintIgnore": [
+        "src/**/__tests__"
+    ],
+    "@pika/pack": {
+        "pipeline": [
+            [
+                "@pika/plugin-ts-standard-pkg"
+            ],
+            [
+                "@pika/plugin-build-web"
+            ],
+            [
+                "@pika/plugin-build-node"
+            ]
+        ]
+    }
+}

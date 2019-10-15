@@ -1,0 +1,14 @@
+{
+    "exclude": ["./stories/**", "**/__tests__/**"],
+    "compilerOptions": {
+        "target": "es2019",
+        "module": "esnext",
+        "jsx": "react",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "strict": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true
+    }
+}
