@@ -46,9 +46,17 @@ export function usePromise<T>(
 
         const instance = promise.getPromise();
 
-        instance.then((result) => {
-            dispatch({ type: "COMPLETE", promise, result: { status: "SUCCESS", value: result } });
-        });
+        instance
+            .then((result) => {
+                dispatch({
+                    type: "COMPLETE",
+                    promise,
+                    result: { status: "SUCCESS", value: result },
+                });
+            })
+            .catch((error) => {
+                dispatch({ type: "COMPLETE", promise, result: { status: "ERROR", value: error } });
+            });
 
         if (typeof onCancel === "function") {
             promise.cancel = () => onCancel(instance);
