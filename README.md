@@ -78,7 +78,7 @@ usePromise(getUsers, {
 If you wrap all of your Axios promises this way and often use usePromise throughout your app, it can be helpful to preconfigure this option:
 
 ```js
-import { usePromise } from "react-promise-switch";
+import { usePromise } from "react-smart-promise";
 
 export const useAxiosPromise = (fn, options) => usePromise(fn, { 
     cancel: axiosPromise => axiosPromise.cancel(), 
