@@ -1,6 +1,6 @@
 {
     "name": "react-smart-promise",
-    "version": "0.0.2",
+    "version": "1.0.0",
     "author": "Eric Mantooth",
     "description": "Easily handle promises in your React components.",
     "keywords": [
