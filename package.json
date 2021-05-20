@@ -27,12 +27,11 @@
         "url": "https://github.com/erictooth/react-smart-promise/issues"
     },
     "homepage": "https://github.com/erictooth/react-smart-promise",
-    "dependencies": {},
-    "peerDependencies": {
-        "react": "^16.8.0"
-    },
-    "optionalDependencies": {
+    "dependencies": {
         "@types/react": "^16.8.0"
+    },
+    "peerDependencies": {
+        "react": "^16.8.0 || ^17.0.0"
     },
     "devDependencies": {
         "@erictooth/eslint-config": "^1.1.4",
