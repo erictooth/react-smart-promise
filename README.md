@@ -9,7 +9,7 @@ Try the other libaries in the series! [React Stateful Tabs](https://github.com/e
 
 ## ✨ Features
 - 📦 Works with any code or library that uses promises
-- 🌬 Customizable cancelation for libaries like [Axios](https://github.com/axios/axios#cancellation) and native `fetch`
+- 🌬 Customizable cancelation for libraries like [Axios](https://github.com/axios/axios#cancellation) and native `fetch`
 - 🎯 Complete TypeScript generics for automatic inference of promise result type
 - 🔄 Multiple re-fetch modes (`every`, `latest`) for scenarios like typeahead search or debounced inputs
 - ⚡️ Fully customizable for pagination, optimistic updates, infinite scroll, polling, etc.
