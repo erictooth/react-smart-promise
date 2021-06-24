@@ -18,9 +18,9 @@ export function usePromise<T>(
 ) {
     const [state, dispatch] = usePromiseState<T>();
 
-    useEffect(() => {
-        const { mode = defaultOptions.mode, onCancel = defaultOptions.onCancel } = options;
+    const { mode = defaultOptions.mode, onCancel = defaultOptions.onCancel } = options;
 
+    useEffect(() => {
         if (typeof getPromise === "undefined" || getPromise === null) {
             dispatch({ type: "RESET" });
             return;
@@ -67,7 +67,7 @@ export function usePromise<T>(
                 dispatch({ type: "CLEANUP", promise });
             }
         };
-    }, [getPromise, dispatch, options]);
+    }, [getPromise, dispatch, mode, onCancel]);
 
     return state;
 }
