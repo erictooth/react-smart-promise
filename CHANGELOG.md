@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/erictooth/react-smart-promise/compare/v1.0.3...v1.0.4) (2021-06-24)
+
+
+### Bug Fixes
+
+* don't require onCancel function to be memoized ([8031bfd](https://github.com/erictooth/react-smart-promise/commit/8031bfd41dacfd4da6ef3526070c222bd321e5bc))
+
 ## [1.0.3](https://github.com/erictooth/react-smart-promise/compare/v1.0.2...v1.0.3) (2021-06-24)
 
 
