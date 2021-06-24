@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { makeCancelable, CancelablePromise } from "./makeCancelable";
 import { usePromiseState } from "./usePromiseState";
 
@@ -20,6 +20,9 @@ export function usePromise<T>(
 
     const { mode = defaultOptions.mode, onCancel = defaultOptions.onCancel } = options;
 
+    const onCancelRef = useRef(onCancel);
+    onCancelRef.current = onCancel;
+
     useEffect(() => {
         if (typeof getPromise === "undefined" || getPromise === null) {
             dispatch({ type: "RESET" });
@@ -31,6 +34,8 @@ export function usePromise<T>(
                 `usePromise requires a function argument, but received ${typeof getPromise}`
             );
         }
+
+        const onCancel = onCancelRef.current;
 
         // Build an object containing a function to initiate the promise
         // as well as a function to cancel it. Use the customCancel arg
@@ -67,7 +72,7 @@ export function usePromise<T>(
                 dispatch({ type: "CLEANUP", promise });
             }
         };
-    }, [getPromise, dispatch, mode, onCancel]);
+    }, [getPromise, dispatch, mode]);
 
     return state;
 }
