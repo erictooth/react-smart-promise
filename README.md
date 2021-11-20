@@ -40,7 +40,7 @@ function App() {
 ```
 
 ## API
-`const [error, data, status] = usePromise(options);`
+`const [error, data, status] = usePromise(fetchFn, options);`
 
 ### `options`
 ```ts
@@ -135,7 +135,9 @@ const submitForm = (formState) => axios.post("/submit", formState);
 function FormContainer() {
     const [submitted, setSubmitted] = React.useState(false);
     const [formState, setFormState] = React.useState({});
-    const [formErrors, successful, status] = usePromise(submitted ? React.useCallback(() => submitForm(formState), [formState]) : null);
+    const [formErrors, successful, status] = usePromise(
+        useMemo(() => submitted ? () => submitForm(formState) : null, [submitted, formState])
+    );
     
     React.useEffect(() => {
         if (successful) {
